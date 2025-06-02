@@ -2,15 +2,25 @@ console.log('Hier komt je server voor Sprint 12.')
 //express downloaden
 import express from 'express'
 
+import { Liquid } from 'liquidjs';
+
 const app = express()
 
 //public map
 app.use(express.static('public'))
 
+// Liquid instellen als 'view engine' (dus de html mapjes die de website te zien krijgen)
+const engine = new Liquid();
+app.engine('liquid', engine.express()); 
+
 //laat data beter ophalen
 app.use(express.urlencoded({extended: true}))
 
-
+//index.liquid 
+app.get('/', async function (request, response) {
+   
+   response.render('index.liquid',)
+})
 
 
 
