@@ -6,6 +6,21 @@ import { Liquid } from 'liquidjs';
 
 const app = express()
 
+
+//api's
+const api_url = "https://labelvier.nl/wp-json"
+
+const api_cases = "/wp/v2/cases"
+
+//hier komen de fetches
+const CasesResponse = await fetch(`${api_url}${api_cases}`)
+
+
+//hier word de data opgehaald en vertaald in JSON
+const CasesResponseJSON = await CasesResponse.json()
+
+console.log(CasesResponseJSON)
+
 //public map
 app.use(express.static('public'))
 
