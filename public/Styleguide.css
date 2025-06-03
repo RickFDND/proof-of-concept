@@ -1,0 +1,73 @@
+:root {
+    /* Fontsizes */
+    --heading-1-size: 2.5rem;
+    --body-text-size: 1.1rem;
+    --heading-2-size: 1.83rem;
+
+    /* Fontweights */
+    --body-text-weight: light;
+    --heading-1-weight: bold;
+    --heading-2-weight: 600;
+
+    /* Font line-heights */
+    --body-text-line-height: 1.5rem;
+
+    /* Colors */
+    --color-primary: white;
+    --color-secondary: black;
+    --color-accent-pink: #E2655E;
+    --color-accent-blue: #281CE2;
+    
+    /* Hover colors */
+    --color-hover-pink:  #F7CDD5;
+    --color-hover-blue:  #EEF9FD;
+}
+
+body {
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    line-height: var(--body-text-line-height);
+    color: var(--color-secondary);
+}
+
+h1 {
+    font-size: var(--heading-1-size);
+    font-weight: var(--heading-1-weight);
+}
+
+h2 {
+    font-size: var(--heading-2-size);
+    font-weight: var(--heading-2-weight);
+}
+
+/* Buttons */
+.button-blue {
+    background-color: var(--color-accent-blue);
+    color: var(--color-primary);
+
+    &:hover {
+        background-color: var(--color-hover-blue);
+        color: var(--color-accent-blue);
+    }
+}
+
+.button-pink {
+    background-color: var(--color-accent-pink);
+    color: var(--color-primary);
+
+    &:hover {
+        background-color: var(--color-hover-pink);
+        color: var(--color-accent-pink);
+    }
+}
+
+.project-img {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+section:hover {
+
+    .project-img {
+        filter: brightness(1.1);
+    }
+}
