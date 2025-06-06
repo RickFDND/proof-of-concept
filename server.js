@@ -31,12 +31,20 @@ app.engine('liquid', engine.express());
 //laat data beter ophalen
 app.use(express.urlencoded({extended: true}))
 
-//index.liquid 
+//cases.liquid 
 app.get('/', async function (request, response) {
+
+  const CasesResponse = await fetch(`${api_url}${api_cases}`)
+
+  const CasesResponseJSON = await CasesResponse.json()
    
-   response.render('index.liquid',)
+   response.render('cases.liquid', {CasesResponse: CasesResponseJSON.data})
 })
 
+app.get('/project/:id', async function (request, response) {
+   
+   response.render('project.liquid',)
+})
 
 
 //redirect naar homepage als pagina niet werkt
