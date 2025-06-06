@@ -41,9 +41,10 @@ app.get('/', async function (request, response) {
    response.render('cases.liquid', {CasesResponse: CasesResponseJSON.data})
 })
 
+//detail pagina
 app.get('/project/:id', async function (request, response) {
    
-   response.render('project.liquid',)
+   response.render('detail.liquid',)
 })
 
 
