@@ -24,7 +24,7 @@ app.engine('liquid', engine.express());
 app.use(express.urlencoded({extended: true}))
 
 //cases.liquid 
-app.get('/cases', async function (request, response) {
+app.get('/', async function (request, response) {
 
     const CasesResponse = await fetch(`${api_url}${api_cases}`)
     const CasesResponseJSON = await CasesResponse.json() 

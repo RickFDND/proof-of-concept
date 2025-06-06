@@ -1,1 +1,50 @@
-<h1> hallo </h1>
+{% render 'partials/head.liquid' %}
+
+<main>
+    <h1><strong>Projecten</strong> waar we trots op zijn!</h1>
+
+    <ul class="projects-list">
+        {% for case in cases %}
+        <li class="project-section">
+            <a href="project/{{ case.id }}">
+                <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}" width="450" height="400">
+                <h2>{{ case.title.rendered }}</h2>
+                <p>{{ case.content.rendered | strip_html | truncatewords: 32 }}</p>
+                <span>Lees verder
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.8163 0.118644C6.94137 -0.039548 7.19151 -0.039548 7.34785 0.118644L13.8827 6.73107C14.0391 6.88927 14.0391 7.11073 13.8827 7.26893L7.34785 13.8814C7.19151 14.0395 6.94137 14.0395 6.8163 13.8814L6.19096 13.2802C6.03462 13.122 6.03462 12.8689 6.19096 12.7424L11.0374 7.80678H0.375209C0.156337 7.80678 0 7.64859 0 7.42712V6.54124C0 6.35141 0.156337 6.16158 0.375209 6.16158H11.0374L6.19096 1.25763C6.03462 1.13107 6.03462 0.877966 6.19096 0.719774L6.8163 0.118644Z" fill="black"/>
+                    </svg>
+                </span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <section class="next-page-buttons">
+        <a href="/">1</a>
+        <a href="cases-2" class="button-pink">2</a>
+        <a href="cases-3" class="button-pink">3</a>
+        <a href="cases-2" class="button-pink">
+            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.8125 0.21875C6.9375 0.0625 7.1875 0.0625 7.34375 0.21875L13.875 6.75C14.0312 6.90625 14.0312 7.125 13.875 7.28125L7.34375 13.8125C7.1875 13.9688 6.9375 13.9688 6.8125 13.8125L6.1875 13.2188C6.03125 13.0625 6.03125 12.8125 6.1875 12.6875L11.0312 7.8125H0.375C0.15625 7.8125 0 7.65625 0 7.4375V6.5625C0 6.375 0.15625 6.1875 0.375 6.1875H11.0312L6.1875 1.34375C6.03125 1.21875 6.03125 0.96875 6.1875 0.8125L6.8125 0.21875Z" fill="white"/>
+            </svg>
+        </a>
+    </section>
+    
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% render 'partials/footer.liquid' %}
