@@ -10,16 +10,8 @@ const app = express()
 //api's
 const api_url = "https://labelvier.nl/wp-json"
 
-const api_cases = "/wp/v2/cases?per_page=99"
+const api_cases = "/wp/v2/cases"
 
-//hier komen de fetches
-const CasesResponse = await fetch(`${api_url}${api_cases}`)
-
-
-//hier word de data opgehaald en vertaald in JSON
-const CasesResponseJSON = await CasesResponse.json()
-
-console.log(CasesResponseJSON)
 
 //public map
 app.use(express.static('public'))
@@ -32,14 +24,16 @@ app.engine('liquid', engine.express());
 app.use(express.urlencoded({extended: true}))
 
 //cases.liquid 
-app.get('/', async function (request, response) {
+app.get('/cases', async function (request, response) {
 
-  const CasesResponse = await fetch(`${api_url}${api_cases}`)
+    const CasesResponse = await fetch(`${api_url}${api_cases}`)
+    const CasesResponseJSON = await CasesResponse.json() 
 
-  const CasesResponseJSON = await CasesResponse.json()
-   
-   response.render('cases.liquid', {CasesResponse: CasesResponseJSON.data})
+    console.log(CasesResponseJSON)
+  
+    response.render('cases.liquid', {cases: CasesResponseJSON});
 })
+
 
 //detail pagina
 app.get('/project/:id', async function (request, response) {
