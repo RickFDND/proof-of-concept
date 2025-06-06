@@ -10,7 +10,7 @@ const app = express()
 //api's
 const api_url = "https://labelvier.nl/wp-json"
 
-const api_cases = "/wp/v2/cases"
+const api_cases = "/wp/v2/cases?per_page=99"
 
 //hier komen de fetches
 const CasesResponse = await fetch(`${api_url}${api_cases}`)
