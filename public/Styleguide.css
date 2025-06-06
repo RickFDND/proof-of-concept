@@ -1,3 +1,67 @@
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Hind */
+
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
     /* Fontsizes */
     --heading-1-size: 2.5rem;
@@ -28,6 +92,7 @@ body {
     font-weight: var(--body-text-weight);
     line-height: var(--body-text-line-height);
     color: var(--color-secondary);
+    font-family: 'HindGuntur', sans-serif;
 }
 
 h1 {
