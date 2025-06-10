@@ -1,0 +1,12 @@
+{% render 'partials/head.liquid' %}
+
+
+{% for projects in project %}
+
+    <h1>{{ projects.title.rendered }}</h1>
+
+
+
+    {% endfor %}
+
+{% render 'partials/footer.liquid' %}
