@@ -1,0 +1,65 @@
+strong {
+    font-weight: bold;
+}
+
+nav {
+    display: none;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+        height: 65px;
+    }
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline-start: 0;
+    margin-inline: 1.6em;
+
+    li {
+        list-style-type: none;
+        padding-bottom: 2em;
+
+        div {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 185px;
+            width: 100%;
+            max-width: 350px;
+            overflow: hidden;
+        }
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            max-width: 350px;
+            height: 100%;
+        }
+
+        img:nth-of-type(1) {
+            filter: brightness(0.8);
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        span {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+    }
+}
