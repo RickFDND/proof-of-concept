@@ -1,17 +1,11 @@
-strong {
-    font-weight: bold;
-}
-
 .projects-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-inline-start: 0;
     margin-inline: 1.6em;
 
     li {
-        list-style-type: none;
         padding-bottom: 2em;
 
         div {
@@ -23,18 +17,16 @@ strong {
             width: 100%;
             max-width: 350px;
             overflow: hidden;
-        }
 
-        img {
+            img {
+            transition: filter 0.3s ease, transform 0.3s ease;
+            filter: brightness(0.8);
             object-fit: cover;
             object-position: center;
             width: 100%;
             max-width: 350px;
             height: 100%;
-        }
-
-        img:nth-of-type(1) {
-            filter: brightness(0.8);
+            }
         }
 
         p {
@@ -53,5 +45,34 @@ strong {
                 padding-block-end: 2px;
             }
         }
+    }
+
+    li:hover {
+        img {
+            filter: brightness(0.9);
+        }
+    }
+}
+
+.next-page-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.8em;
+    margin-inline: 1.6em;
+    padding-top: 2em;
+
+    a, span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 53px;
+        width: 100%;
+        font-weight: 700;
+    }
+
+    span {
+        background-color: var(--color-accent-blue);
+        color: white;
     }
 }

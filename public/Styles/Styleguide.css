@@ -117,6 +117,10 @@ h2 {
     margin-top: 1em;
 }
 
+strong {
+    font-weight: bold;
+}
+
 /* Buttons */
 .button-blue {
     background-color: var(--color-accent-blue);
@@ -138,18 +142,18 @@ h2 {
     }
 }
 
-.project-img {
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-li:hover {
-
-    .project-img {
-        filter: brightness(1.1);
-    }
-}
-
 a {
     text-decoration: none;
     color: black;
 }
+
+/* lists */
+
+ul {
+    padding-inline-start: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
