@@ -6,7 +6,7 @@
     <h1><strong>Projecten</strong> waar we trots op zijn!</h1>
 
     <ul class="projects-list">
-        {% for case in cases %}
+        {% for case in cases offset:0 limit:8 %}
         <li class="project-section">
             <a href="project/{{ case.id }}">
                 <div>

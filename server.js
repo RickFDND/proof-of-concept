@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended: true}))
 //cases.liquid 
 app.get('/', async function (request, response) {
 
-    const CasesResponse = await fetch(`${api_url}${api_cases}`)
+    const CasesResponse = await fetch(`${api_url}${api_cases}?per_page=99`)
     const CasesResponseJSON = await CasesResponse.json() 
 
     //console.log(CasesResponseJSON)
