@@ -64,9 +64,9 @@
 
 :root {
     /* Fontsizes */
-    --heading-1-size: 2.5rem;
-    --body-text-size: 1.185rem;
-    --heading-2-size: 2.35rem;
+    --heading-1-size: clamp(2.5rem, 5vw, 4rem);
+    --body-text-size: clamp(1.2rem, 3vw, 1.5rem);
+    --heading-2-size: clamp(2.375rem, 4.5vw, 3rem);
 
     /* Fontweights */
     --body-text-weight: light;
