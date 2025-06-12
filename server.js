@@ -28,8 +28,6 @@ app.get('/', async function (request, response) {
 
     const CasesResponse = await fetch(`${api_url}${api_cases}?per_page=99`)
     const CasesResponseJSON = await CasesResponse.json() 
-
-    //console.log(CasesResponseJSON)
   
     response.render('cases.liquid', {cases: CasesResponseJSON});
 })
@@ -41,8 +39,6 @@ app.get('/project/:id', async function (request, response) {
   const ProjectResponse = await fetch(`${api_url}${api_cases}/${request.params.id}`);
 
   const ProjectResponseJSON = await ProjectResponse.json();
-
-  console.log(ProjectResponseJSON)
    
    response.render('detail.liquid', {project: ProjectResponseJSON.data});
 })
