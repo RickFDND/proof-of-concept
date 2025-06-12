@@ -2,22 +2,6 @@ strong {
     font-weight: bold;
 }
 
-nav {
-    display: none;
-}
-
-header {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    img {
-        height: 65px;
-    }
-}
-
 .projects-list {
     display: flex;
     flex-direction: column;
@@ -55,11 +39,19 @@ header {
 
         p {
             line-height: 1.5;
+            max-width: 320px;
         }
 
         span {
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
             font-weight: 700;
             font-size: 1.1rem;
+
+            svg {
+                padding-block-end: 2px;
+            }
         }
     }
 }

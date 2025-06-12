@@ -65,7 +65,7 @@
 :root {
     /* Fontsizes */
     --heading-1-size: 2.5rem;
-    --body-text-size: 1.2rem;
+    --body-text-size: 1.185rem;
     --heading-2-size: 2.35rem;
 
     /* Fontweights */
@@ -113,7 +113,7 @@ h2 {
     font-size: var(--heading-2-size);
     font-weight: var(--heading-2-weight);
     line-height: 1.15;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.55em;
     margin-top: 1em;
 }
 
