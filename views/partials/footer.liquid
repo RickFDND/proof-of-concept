@@ -36,5 +36,14 @@
                 </form>
             </section>
         </footer>
+
+        <script>
+            let navigationMenu = document.querySelector('nav');
+            let hamburgerButton = document.querySelector('#hamburger-button');
+
+            hamburgerButton.addEventListener('click', function(){
+                navigationMenu.classList.toggle('navigation-menu-open');
+            });
+        </script>
     </body>
 </html>
