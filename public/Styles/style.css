@@ -1,3 +1,5 @@
+/* header.liquid */
+
 header {
     height: 80px;
     display: flex;
@@ -113,59 +115,61 @@ header {
     }
 }
 
+/* cases.liquid (main) */
+
 main {
     margin-inline: 1.6em;
-}
 
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 2em;
+    .projects-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 2em;
+        
     
-
-    li {
-
-        div {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 185px;
-            width: 100%;
-            max-width: 350px;
-            overflow: hidden;
-
-            img {
-                transition: filter 0.3s ease, transform 0.3s ease;
-                filter: brightness(0.8);
-                object-fit: cover;
+        li {
+        
+            div {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 185px;
                 width: 100%;
-                height: 100%;
+                max-width: 350px;
+                overflow: hidden;
+            
+                img {
+                    transition: filter 0.3s ease, transform 0.3s ease;
+                    filter: brightness(0.8);
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        
+            p {
+                max-width: 320px;
+            }
+        
+            span {
+                display: flex;
+                align-items: center;
+                gap: 0.6em;
+                font-weight: 700;
+                font-size: 1.1rem;
+            
+                svg {
+                    padding-block-end: 2px;
+                }
             }
         }
-
-        p {
-            max-width: 320px;
-        }
-
-        span {
-            display: flex;
-            align-items: center;
-            gap: 0.6em;
-            font-weight: 700;
-            font-size: 1.1rem;
-
-            svg {
-                padding-block-end: 2px;
+    
+        li:hover {
+            img {
+                filter: brightness(0.9);
             }
-        }
-    }
-
-    li:hover {
-        img {
-            filter: brightness(0.9);
         }
     }
 }
@@ -192,12 +196,15 @@ main {
     }
 }
 
+/* contact-section.liquid */
+
 .contact-section {  
     padding-top: 2.5em;
+    padding-bottom: 4.2em;
     margin-inline: 1.6em;
 
     h2 {
-        padding-bottom: 1.5em;
+        padding-bottom: 1em;
     }
 
     a {
@@ -208,4 +215,83 @@ main {
         height: 53px;
         font-weight: 600;
     }
+}
+
+/* footer.liquid */
+
+footer {
+    position: relative;
+    background-color: #e6e6e6;
+    
+    .about-us {
+        margin-inline: 1.6em;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+            margin-block-start: 0.35em;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .newsletter {
+        background-color: var(--color-accent-pink);
+        height: 340px;
+        margin-top: 3em;
+
+        h2 {
+            font-size: 1.6em;
+            margin-inline: 1em;
+            color: white;
+        }
+
+        form {
+            margin-inline: 1.6em;
+            display: flex;
+            flex-direction: column;
+            row-gap: .3em;
+
+            input, button {
+                height: 53px;
+            }
+
+            input {
+                padding-left: 1em;
+            }
+
+            button {
+                border: none;
+                background-color: white;
+                color: var(--color-accent-pink);
+                font-size: max(.9090909091vw, 1.1rem);
+                font-weight: 700;
+                width: 230px;
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+/*kartel randje */
+footer::before {
+    --kartel-angle:116.5deg;
+    --kartel-width:4em;
+    --kartel-height:1em;
+    
+    content:"";
+    
+    position:absolute;
+    display: block;
+    left:0;
+    right:0;
+    bottom:100%;
+    height:var(--kartel-height);
+    
+    background-image:
+      repeating-conic-gradient(at 50% 0, transparent var(--kartel-angle), #e6e6e6 0 calc(360deg - var(--kartel-angle)) ,transparent 0 360deg);
+    background-size:var(--kartel-width) 100%;
 }
