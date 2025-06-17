@@ -177,22 +177,35 @@ main {
 .next-page-buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
-    column-gap: 0.8em;  
+    align-items: center; 
     padding-top: 2em;
 
-    a, span {
+    ol {
+        list-style-type: none;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 53px;
+        column-gap: 0.8em;
+        padding: 0;
         width: 100%;
-        font-weight: 700;
-    }
 
-    span {
-        background-color: var(--color-accent-blue);
-        color: white;
+        li {
+            min-width: 3em;
+
+            a, span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 53px;
+                width: 100%;
+                font-weight: 700;
+            }
+
+            span {
+                background-color: var(--color-accent-blue);
+                color: white;
+            }
+        }
     }
 }
 

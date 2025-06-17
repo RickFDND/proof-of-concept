@@ -24,13 +24,23 @@ app.engine('liquid', engine.express());
 app.use(express.urlencoded({extended: true}))
 
 //cases.liquid 
-app.get('/', async function (request, response) {
+app.get(['/cases', '/cases/page:page'], async (req, res) => {
+  const page = req.params.page || 1;
 
-    const CasesResponse = await fetch(`${api_url}${api_cases}?per_page=99`)
-    const CasesResponseJSON = await CasesResponse.json() 
+  const url = `${api_url}${api_cases}?_embed&per_page=8&page=${page}`;
+
+  const responseAPI = await fetch(url);
   
-    response.render('cases.liquid', {cases: CasesResponseJSON});
-})
+  const data = await responseAPI.json();
+
+  const totalPages = responseAPI.headers.get('X-WP-TotalPages');
+
+  res.render('cases.liquid', {
+    cases: data,
+    currentPage: Number(page),
+    totalPages: Number(totalPages)
+  });
+});
 
 
 //detail pagina
@@ -47,7 +57,7 @@ app.get('/project/:id', async function (request, response) {
 //redirect naar homepage als pagina niet werkt
 app.post('/', async function (request, response) {
  
-  response.redirect(303, '/')
+  response.redirect(303, '/cases')
 })
 
 //nummer van localhost
