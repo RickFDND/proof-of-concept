@@ -60,7 +60,6 @@
 }
 
 body {
-    font-size: var(--body-text-size);
     font-weight: var(--body-text-weight);
     color: var(--color-secondary);
     line-height: var(--body-text-line-height);
@@ -70,6 +69,7 @@ body {
 
 p {
     line-height: var(--body-text-line-height);
+    font-size: var(--body-text-size);
 }
 
 h1 {
