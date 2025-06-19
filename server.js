@@ -12,6 +12,8 @@ const api_url = "https://labelvier.nl/wp-json"
 
 const api_cases = "/wp/v2/cases"
 
+const api_users = "/wp/v2/users"
+
 
 //public map
 app.use(express.static('public'))
@@ -49,10 +51,15 @@ app.get('/project/:id', async function (request, response) {
   const ProjectResponse = await fetch(`${api_url}${api_cases}/${request.params.id}`);
 
   const ProjectResponseJSON = await ProjectResponse.json();
-   
-   response.render('detail.liquid', {project: ProjectResponseJSON.data});
-})
 
+  const usersResponse = await fetch(`${api_url}${api_users}/`);
+
+  const usersResponseJSON = await usersResponse.json();
+
+  console.log(ProjectResponseJSON)
+   
+   response.render('detail.liquid', {project: ProjectResponseJSON, users: usersResponseJSON});
+})
 
 //redirect naar homepage als pagina niet werkt
 app.post('/', async function (request, response) {
