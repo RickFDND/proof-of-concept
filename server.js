@@ -61,6 +61,28 @@ app.get('/project/:id', async function (request, response) {
    response.render('detail.liquid', {project: ProjectResponseJSON, users: usersResponseJSON});
 })
 
+//POST nieuwsbrief
+
+app.post("/nieuwsbrief", async function (req, res) {
+  const emailAdres = req.body.email;
+
+  const inschrijving = {
+    from: "nieuwsbrief",
+    for: emailAdres,
+    text: "Nieuwe aanmelding!"
+  };
+
+  await fetch("https://fdnd-agency.directus.app/items/avl_messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(inschrijving)
+  });
+
+  res.redirect(303, "/cases");
+});
+
 //redirect naar homepage als pagina niet werkt
 app.post('/', async function (request, response) {
  
