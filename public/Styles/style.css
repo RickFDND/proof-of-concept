@@ -344,6 +344,7 @@ footer {
         transform: translateY(40px);
 
         h2 {
+            padding-top: 1.5em;
             font-size: 1.6em;
             margin-inline: 1em;
             color: white;
