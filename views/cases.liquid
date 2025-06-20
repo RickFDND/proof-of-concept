@@ -8,7 +8,7 @@
     <ul class="all-projects">
         {% for case in cases %}
         <li>
-            <a href="project/{{ case.id }}">
+            <a href="/project/{{ case.id }}">
                 <div>
                     <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}" width="360" height="360" class="project-img" loading="lazy">
                 </div>
