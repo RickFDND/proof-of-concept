@@ -5,9 +5,9 @@
 <main>
     <h1><strong>Projecten</strong> waar we trots op zijn!</h1>
 
-    <ul class="projects-list">
+    <ul class="all-projects">
         {% for case in cases %}
-        <li class="project-section">
+        <li>
             <a href="project/{{ case.id }}">
                 <div>
                     <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}" width="360" height="360" class="project-img" loading="lazy">

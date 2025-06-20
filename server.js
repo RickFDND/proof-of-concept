@@ -56,7 +56,6 @@ app.get('/project/:id', async function (request, response) {
 
   const usersResponseJSON = await usersResponse.json();
 
-  console.log(ProjectResponseJSON)
    
    response.render('detail.liquid', {project: ProjectResponseJSON, users: usersResponseJSON});
 })

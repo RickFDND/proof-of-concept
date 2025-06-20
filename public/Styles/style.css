@@ -120,7 +120,7 @@ header {
 main {
     margin-inline: 1.6em;
 
-    .projects-list {
+    .all-projects {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -304,7 +304,7 @@ footer {
     position: relative;
     background-color: #e6e6e6;
     
-    .about-us {
+    .footer-columns {
         display: flex;
         flex-wrap: wrap;
         margin-inline: 1.6em;
