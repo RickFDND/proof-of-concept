@@ -1,0 +1,110 @@
+/* footer.liquid */
+
+footer {
+    position: relative;
+    background-color: #e6e6e6;
+    
+    .footer-columns {
+        display: flex;
+        flex-wrap: wrap;
+        margin-inline: 1.6em;
+        column-gap: 20%;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+            margin-block-start: 0.35em;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        @media (min-width:1350px) {
+            justify-content: center;
+        }
+    }
+
+    
+    .newsletter {
+        background-color: var(--color-accent-pink);
+        height: 280px;
+        margin-top: 3em;
+
+        /* fade in animatie */
+        view-timeline-name: --fadein;
+        view-timeline-axis: block;
+
+        animation-name: fadeIn;
+        animation-fill-mode: both;
+        animation-timeline: --fadein;
+        animation-range: entry 20% cover 30%;
+        opacity: 0;
+        transform: translateY(40px);
+
+        h2 {
+            padding-top: 1.5em;
+            font-size: 1.6em;
+            margin-inline: 1em;
+            color: white;
+        }
+
+        form {
+            margin-inline: 1.6em;
+            display: flex;
+            flex-direction: column;
+            row-gap: .3em;
+
+            input, button {
+                height: 53px;
+            }
+
+            input {
+                padding-left: 1em;
+            }
+
+            button {
+                border: none;
+                background-color: white;
+                color: var(--color-accent-pink);
+                font-size: max(.9090909091vw, 1.1rem);
+                font-weight: 700;
+                width: 230px;
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*kartel randje boven de footer */
+footer::before {
+    --kartel-angle:116.5deg;
+    --kartel-width:4em;
+    --kartel-height:1em;
+    
+    content:"";
+    
+    position:absolute;
+    display: block;
+    left:0;
+    right:0;
+    bottom:100%;
+    height:var(--kartel-height);
+    
+    background-image:
+      repeating-conic-gradient(at 50% 0, transparent var(--kartel-angle), #e6e6e6 0 calc(360deg - var(--kartel-angle)) ,transparent 0 360deg);
+    background-size:var(--kartel-width) 100%;
+}
+

@@ -1,0 +1,32 @@
+/* contact-section.liquid */
+
+.contact-section {  
+    padding-top: 2.5em;
+    padding-bottom: 4.2em;
+    margin-inline: 1.6em;
+
+    h2 {
+        padding-bottom: 1em;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 260px;
+        height: 53px;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    @media (min-width:1200px) {
+        display: flex;
+        align-items: center;
+        column-gap: 2em;
+        margin-inline: 5em;
+    }
+
+    @media(min-width:1400px) {
+        margin-inline: 8em;
+    }
+}

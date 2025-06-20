@@ -1,0 +1,116 @@
+/* header.liquid */
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+        height: 65px;
+    }
+
+    #hamburger-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-accent-blue);
+        width: 110px;
+        height: 100px;
+        border: none;
+        z-index: 10;
+
+        span {
+            display: block;
+            width: 37px;
+            height: 3px;
+            border-radius: 8px;
+            background-color: white;
+        }
+    }
+
+    nav {
+        display: none;
+        position: fixed;
+        z-index: 9;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 75vh;
+        background-color: white;
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 310px;
+            width: 100%;
+            height: 53px;
+            background-color: #e6e6e6;
+            margin-bottom: 3em;
+            margin-inline: 1.7em;
+
+            input {
+                background-color: #e6e6e6;
+                border: none;
+                width: 100%;
+                padding-inline-start: 1em;
+            }
+
+            button {
+                background-color: #e6e6e6;
+                border: none;
+                width: 53px;
+                height: 53px;
+            }
+        }
+
+        ul:nth-of-type(1) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2em;
+            margin-inline: 1.6em;
+            width: 100%;
+            max-width: 310px;
+
+            li {
+
+                a {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        li:nth-of-type(2), li:nth-of-type(3) {
+            
+            ul {
+                display: none;
+            }
+        }
+    }
+}
+
+.navigation-menu-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: .5em;
+
+    .button-blue {
+        background: none;
+        color: black;
+        font-size: 2rem;
+        font-weight: bold;
+        width: 100%;
+        max-width: 310px;
+    }
+}
