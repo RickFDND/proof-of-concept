@@ -55,11 +55,14 @@
             //loading state
 
             if ('fetch' in window && 'DOMParser' in window) {
+                //luisterd naar een submit op de pagina
             document.addEventListener('submit', async function(event) {
               const form = event.target;
 
+              //filteren op enhanced formulieren
               if (!form.hasAttribute('data-enhanced')) return;
 
+              //zorgt dat de pagina niet herlaad
               event.preventDefault();
 
               // voeg een loading class toe
@@ -67,23 +70,28 @@
 
               const formData = new FormData(form);
 
+              //formulier sturen naar fetch
               if (event.submitter && event.submitter.name) {
                 formData.append(event.submitter.name, event.submitter.value);
               }
 
+              //response verwerken als html
               const response = await fetch(form.action, {
                 method: form.method,
                 body: new URLSearchParams(formData),
               });
 
+              //
               const responseText = await response.text();
               const parser = new DOMParser();
               const responseDOM = parser.parseFromString(responseText, 'text/html');
 
+              //nieuwe form ophalen, zoek het formulier met dezelfde data enhanced attribuut.
               const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]');
 
               if (newState) {
                 
+              //als hetzelfde data enhanced attribuut is successtate toevoegen
                 if (form.action.includes("/nieuwsbrief")) {
                   const heartIcon = newState.querySelector('.icon');
                   if (heartIcon) {
