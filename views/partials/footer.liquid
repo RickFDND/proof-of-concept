@@ -55,65 +55,65 @@
             //loading state
 
             if ('fetch' in window && 'DOMParser' in window) {
-    document.addEventListener('submit', async function(event) {
-      const form = event.target;
+            document.addEventListener('submit', async function(event) {
+              const form = event.target;
 
-      if (!form.hasAttribute('data-enhanced')) return;
+              if (!form.hasAttribute('data-enhanced')) return;
 
-      event.preventDefault();
+              event.preventDefault();
 
-      // Voeg loading class toe
-      form.classList.add('loading');
+              // voeg een loading class toe
+              form.classList.add('loading');
 
-      const formData = new FormData(form);
+              const formData = new FormData(form);
 
-      if (event.submitter && event.submitter.name) {
-        formData.append(event.submitter.name, event.submitter.value);
-      }
+              if (event.submitter && event.submitter.name) {
+                formData.append(event.submitter.name, event.submitter.value);
+              }
 
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: new URLSearchParams(formData),
-      });
+              const response = await fetch(form.action, {
+                method: form.method,
+                body: new URLSearchParams(formData),
+              });
 
-      const responseText = await response.text();
-      const parser = new DOMParser();
-      const responseDOM = parser.parseFromString(responseText, 'text/html');
+              const responseText = await response.text();
+              const parser = new DOMParser();
+              const responseDOM = parser.parseFromString(responseText, 'text/html');
 
-      const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]');
+              const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]');
 
-      if (newState) {
-        // Hier kun je icon aanpassen als nodig
-        if (form.action.includes("/nieuwsbrief")) {
-          const heartIcon = newState.querySelector('.icon');
-          if (heartIcon) {
-            heartIcon.outerHTML = `
-              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="#F33232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            `;
-          }
+              if (newState) {
+                
+                if (form.action.includes("/nieuwsbrief")) {
+                  const heartIcon = newState.querySelector('.icon');
+                  if (heartIcon) {
+                    heartIcon.outerHTML = `
+                      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 13L9 17L19 7" stroke="#F33232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    `;
+                  }
+                }
+
+                // vervang form met nieuwe state
+                form.outerHTML = newState.outerHTML;
+
+                // nieuw formulier selecteren
+                const newForm = document.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]');
+
+                if (newForm) {
+                  // succes class toevoegen
+                  newForm.classList.add('success');
+
+                  // vrwijder loading class nu het vervangen is voltooid
+                  newForm.classList.remove('loading');
+                }
+              } else {
+                // verwijder loading als geen nieuw formulier terugkomt
+                form.classList.remove('loading');
+              }
+            });
         }
-
-        // Vervang formulier in DOM met het nieuwe formulier (behoud loading class voorlopig)
-        form.outerHTML = newState.outerHTML;
-
-        // Selecteer het nieuwe formulier
-        const newForm = document.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]');
-
-        if (newForm) {
-          // Voeg success class toe
-          newForm.classList.add('success');
-
-          // Verwijder loading class nu het vervangen is voltooid
-          newForm.classList.remove('loading');
-        }
-      } else {
-        // Fallback: verwijder loading als geen nieuw formulier terugkomt
-        form.classList.remove('loading');
-      }
-    });
-  }
         </script>
     </body>
 </html>
