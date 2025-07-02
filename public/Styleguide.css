@@ -1,34 +1,34 @@
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/hindguntur/hindguntur-light-webfont.woff2') format('truetype'),
+    src: url('/Fonts/HindGuntur/hindguntur-light-webfont.woff2') format('truetype'),
     url('/fonts/hindguntur/HindGuntur-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/hindguntur/hindguntur-regular-webfont.woff2') format('truetype'),
+    src: url('/Fonts/HindGuntur/hindguntur-regular-webfont.woff2') format('truetype'),
      url('/fonts/hindguntur/HindGuntur-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/hindguntur/hindguntur-medium-webfont.woff2') format('truetype'),
+    src: url('/Fonts/HindGuntur/hindguntur-medium-webfont.woff2') format('truetype'),
      url('/fonts/hindguntur/HindGuntur-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/hindGuntur/hindguntur-semibold-webfont.woff2') format('truetype'),
+    src: url('/Fonts/HindGuntur/hindguntur-semibold-webfont.woff2') format('truetype'),
     url('/fonts/hindguntur/HindGuntur-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/hindguntur/hindguntur-bold-webfont.woff2') format('truetype'),
+    src: url('/Fonts/HindGuntur/hindguntur-bold-webfont.woff2') format('truetype'),
     url('/fonts/hindGuntur/HindGuntur-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
