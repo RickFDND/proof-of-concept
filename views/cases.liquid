@@ -31,7 +31,7 @@
       <ol>
         {% if currentPage > 1 %}
           <li>
-            <a href="/cases/page{{ currentPage | minus: 1 }}" class="button-pink" aria-label="vorige pagina">
+            <a href="/page{{ currentPage | minus: 1 }}" class="button-pink" aria-label="vorige pagina">
               ←
             </a>
           </li>
@@ -42,14 +42,14 @@
             {% if page == currentPage %}
               <span class="active">{{ page }}</span>
             {% else %}
-              <a href="/cases/page{{ page }}" class="button-pink">{{ page }}</a>
+              <a href="/page{{ page }}" class="button-pink">{{ page }}</a>
             {% endif %}
           </li>
         {% endfor %}
 
         {% if currentPage < totalPages %}
           <li>
-            <a href="/cases/page{{ currentPage | plus: 1 }}" class="button-pink" aria-label="volgende pagina">
+            <a href="/page{{ currentPage | plus: 1 }}" class="button-pink" aria-label="volgende pagina">
               →
             </a>
           </li>

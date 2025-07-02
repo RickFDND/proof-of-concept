@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 //cases.liquid 
-app.get(['/cases', '/cases/page:page'], async (req, res) => {
+app.get(['/', '/page:page'], async (req, res) => {
   const page = req.params.page || 1;
 
   const url = `${api_url}${api_cases}?_embed&per_page=8&page=${page}`;
