@@ -1,8 +1,8 @@
-@import url(/styles/styleguide.css);
-@import url(/styles/header.css);
-@import url(/styles/contact-section.css);
-@import url(/styles/footer.css);
-@import url(/styles/detail.css);
+@import url(/Styleguide.css);
+@import url(/header.css);
+@import url(/contact-section.css);
+@import url(/footer.css);
+@import url(/detail.css);
 
 /* cases.liquid (main) */
 main {
