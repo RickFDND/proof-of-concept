@@ -26,8 +26,6 @@ app.engine('liquid', engine.express());
 app.use(express.urlencoded({extended: true}))
 
 
-
-
 //cases.liquid 
 app.get(['/cases', '/cases/page:page'], async (req, res) => {
   const page = req.params.page || 1;
