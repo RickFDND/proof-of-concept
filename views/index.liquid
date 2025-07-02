@@ -1,0 +1,32 @@
+{% render 'partials/head.liquid' %}
+
+{% render 'partials/header.liquid' %}
+<style>
+    .homepage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+            height: 50px;
+            width: 200px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+</style>
+
+
+<section class="homepage">
+    <a href="/cases" class="button-pink">Ga naar cases</a>
+</section>
+
+{% render 'partials/contact-section.liquid' %}
+
+{% render 'partials/footer.liquid' %}
