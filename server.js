@@ -25,12 +25,7 @@ app.engine('liquid', engine.express());
 //laat data beter ophalen
 app.use(express.urlencoded({extended: true}))
 
-app.get('/', async function (request, response) {
-  
-  response.render('index.liquid', {
-  title: 'Label Vier'
-  }) 
-});
+
 
 
 //cases.liquid 
