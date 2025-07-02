@@ -16,7 +16,7 @@ const api_users = "/wp/v2/users"
 
 
 //public map
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 // Liquid instellen als 'view engine' (dus de html mapjes die de website te zien krijgen)
 const engine = new Liquid();
