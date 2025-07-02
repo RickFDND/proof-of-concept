@@ -90,14 +90,41 @@ main {
                 }
             }
 
-        li:hover {
-            img {
-                filter: brightness(0.9);
-            }
+        li {
+            position: relative;
 
             h2 {
+              position: relative;
+              z-index: 0;
+              overflow: hidden;
+              color: black;
+              transition: color 0.3s ease;
+            
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0;
                 background-color: black;
+                z-index: -1;
+                transition: width 0.3s ease;
+              }
+            }
+        
+            &:hover {
+              img {
+                filter: brightness(0.9);
+              }
+          
+              h2 {
                 color: white;
+
+                &::after {
+                  width: 100%;
+                }
+              }
             }
         }
 
